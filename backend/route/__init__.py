@@ -9,6 +9,7 @@ def create_app():
   #Flask 객체 인스턴스 생성
   app = Flask(__name__)
   CORS(app, resources={r'*': {'origins': '*'}})
+  # .env 파일 만들어서 gitignore에 등록 후 중요 정보들 불러오기
   app.config["SQLALCHEMY_DATABASE_URI"] = "mysql+pymysql://root:root@localhost:3306/reviews_db" 
   app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
   app.config['SECRET_KEY'] = "dev1234"
