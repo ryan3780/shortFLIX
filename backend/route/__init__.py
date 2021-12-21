@@ -10,7 +10,7 @@ def create_app():
   app = Flask(__name__)
   CORS(app, resources={r'*': {'origins': '*'}})
   # .env 파일 만들어서 gitignore에 등록 후 중요 정보들 불러오기
-  app.config["SQLALCHEMY_DATABASE_URI"] = "mysql+pymysql://root:root@localhost:3306/reviews_db" 
+  app.config["SQLALCHEMY_DATABASE_URI"] = "." 
   app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
   app.config['SECRET_KEY'] = "dev1234"
   app.config['JSON_AS_ASCII'] = False
