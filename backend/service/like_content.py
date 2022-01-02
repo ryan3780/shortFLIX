@@ -4,7 +4,11 @@ from model.models import *
 def like_contents(content_id, user_email):
     user = User.query.filter_by(email = user_email).first()
     content = Content.query.filter_by(id = content_id).first()
-
+    
+    # 이미 좋아요를 클릭한 사람이라면 취소 기능만 가능해야함
+    # if content in user.likes_list:
+    #   return dislike_content(content_id, user_email)
+    
     prev = user.likes_list
     now = [] 
     now.append({
